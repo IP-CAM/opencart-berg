@@ -1,0 +1,52 @@
+.berg_search {
+  margin-bottom: 20px;
+  background: #eee;
+  display: block;
+  padding: 10px;
+}
+
+  .berg_search_query {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 30px;
+    width: 80%;
+  }
+
+  .berg_search_button {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 30px;
+    width: 20%;
+  }
+
+.berg_products {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+  .berg_products thead {
+    font-weight: bold;
+  }
+
+    .berg_products thead th {
+      padding: 20px 10px;
+      background: #eee;
+    }
+
+  .berg_products tbody {
+
+  }
+
+    .berg_products tbody td {
+      border-bottom: 1px solid #ddd;
+      padding: 5px 10px;
+    }
+
+
+.berg_product_buy {
+
+}
+
+  .berg_product_buy_quantuty {
+    width: 60px;
+  }
