@@ -93,7 +93,7 @@ class ModelModuleBerg extends Model {
         $conf_overprice = $this->config->get('berg_overprice');
         $conf_delivery = $this->config->get('berg_delivery');
 
-        $offer = $this->getBestOffer($resource->offers);
+        $offer = isset($resource->offers) ? $this->getBestOffer($resource->offers) : null;
         $product = null;
 
         if ($offer) {
