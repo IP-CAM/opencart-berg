@@ -20,7 +20,7 @@ class ControllerModuleBerg extends Controller {
             $this->cache->delete('berg');
         }
 
-        $categories = $this->model_catalog_category->getCategoriesByParentId();
+        $categories = $this->model_catalog_category->getCategories(array());
         $this->data['categories'] = array();
 
         foreach ($categories as $category) {
