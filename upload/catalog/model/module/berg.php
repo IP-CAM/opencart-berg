@@ -119,6 +119,7 @@ class ModelModuleBerg extends Model {
                 $product['price'] = $offer->price;
             }
 
+            $product['price'] = ceil($product['price']);
             $product['delivery_from'] = $offer->assured_period + $conf_delivery[0];
             $product['delivery_to'] = $offer->assured_period + $conf_delivery[1];
         }
