@@ -11,7 +11,7 @@ class ControllerModuleBerg extends Controller {
         $this->data['action'] = $this->url->link('module/berg', 'token=' . $this->session->data['token'], 'SSL');
 
         $this->data['conf'] = $this->getConfig(array(
-            'key', 'analogs', 'overprice', 'delivery', 'category'
+            'key', 'analogs', 'overprice', 'delivery_from', 'delivery_to', 'category'
         ));
 
         if (($this->request->server['REQUEST_METHOD'] == 'POST')) {

@@ -91,7 +91,11 @@ class ModelModuleBerg extends Model {
 
     private function prepareProduct($resource) {
         $conf_overprice = $this->config->get('berg_overprice');
-        $conf_delivery = $this->config->get('berg_delivery');
+
+        $conf_delivery = array(
+            $this->config->get('berg_delivery_from'),
+            $this->config->get('berg_delivery_to')
+        );
 
         $offer = isset($resource->offers) ? $this->getBestOffer($resource->offers) : null;
         $product = null;
@@ -115,11 +119,8 @@ class ModelModuleBerg extends Model {
                 $product['price'] = $offer->price;
             }
 
-            if ($conf_delivery) {
-                $product['delivery'] = $offer->assured_period + $conf_delivery;
-            } else {
-                $product['delivery'] = $offer->assured_period;
-            }
+            $product['delivery_from'] = $offer->assured_period + $conf_delivery[0];
+            $product['delivery_to'] = $offer->assured_period + $conf_delivery[1];
         }
 
         return $product;
